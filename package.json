@@ -1,0 +1,30 @@
+{
+  "name": "todo-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@segment/snippet": "^4.16.0",
+    "@trycourier/react-inbox": "^3.6.2",
+    "@trycourier/react-provider": "^3.6.2",
+    "@trycourier/react-toast": "^3.6.2",
+    "next": "13.4.2",
+    "node-fetch": "^3.3.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "next.config.js",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "20.1.7",
+    "@types/react": "18.2.6",
+    "typescript": "5.0.4"
+  }
+}
