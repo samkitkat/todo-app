@@ -19,10 +19,10 @@ export default function Home() {
     <div>
     <main className={styles.main}>
 
-      <CourierProvider userId={"todo-app-test"} clientKey={"ZWQxNWFkYjMtM2M1NC00MGM4LWFkODEtNDczNzUwMWNlZjcw"}>
+        <CourierProvider userId={"todo-app-test"} clientKey={"ZWQxNWFkYjMtM2M1NC00MGM4LWFkODEtNDczNzUwMWNlZjcw"}>
         <Inbox />
         <Toast />
-      </CourierProvider>
+      </CourierProvider> 
 
       <div className={styles.description}>
         <p>

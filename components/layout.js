@@ -36,7 +36,7 @@ export default function Layout({ children, home }) {
   }, []);
 
   return (
-    <div>
+    <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -63,6 +63,6 @@ export default function Layout({ children, home }) {
 
       <main className={inter.className}>{children}</main>
 
-    </div >
+    </>
   )
 }
