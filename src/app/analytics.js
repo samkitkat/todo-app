@@ -5,6 +5,7 @@ import styles from './page.module.css'
 
 export default function Analytics() {
 
+  if (typeof window !== "undefined") {
   (function(){
     // Create a queue, but don't obliterate an existing one!
     var analytics = window.analytics = window.analytics || [];
@@ -85,6 +86,7 @@ export default function Analytics() {
     // move this call however you'd like.
     analytics.page();
   })();
+}
 
 
   return (
