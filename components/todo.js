@@ -27,7 +27,8 @@ export default function Todo() {
     // console.log(Object.keys(todos).length)
     // console.log(todos)
 
-    function handleChange(event, index) {
+    async function handleChange(event, index) {
+        'use server';
         const { name, value, type, checked } = event.target;
         setTodos(prevTodos => {
             const updatedTodos = prevTodos.map((todo, i) => {
