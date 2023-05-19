@@ -40,8 +40,8 @@ export default function Layout({ children, home }) {
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
+          name="todo app"
+          content="built with Next.js"
         />
         <meta
           property="og:image"
@@ -57,17 +57,11 @@ export default function Layout({ children, home }) {
         src="https://connect.facebook.net/en_US/sdk.js"
         strategy="lazyOnload"
         onLoad={() =>
-          console.log(`script loaded correctly, window.FB has been populated`)
+        console.log(`script loaded correctly, window.FB has been populated`)
         }
       />
 
       <main className={inter.className}>{children}</main>
-
-      {/* {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">← Back to home</Link>
-        </div>
-      )} */}
 
     </div >
   )

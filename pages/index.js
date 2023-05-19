@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Head from 'next/head'
+// import Head from 'next/head'
 // import Layout, { siteTitle } from '../components/layout'
 import styles from '../styles/page.module.css'
 import Todo from '../components/todo.js'
