@@ -1,3 +1,4 @@
+'use client'
 import * as React from 'react';
 // import Head from 'next/head'
 // import Layout, { siteTitle } from '../components/layout'
@@ -20,9 +21,9 @@ export default function Home() {
     <main className={styles.main}>
 
         <CourierProvider userId={"todo-app-test"} clientKey={"ZWQxNWFkYjMtM2M1NC00MGM4LWFkODEtNDczNzUwMWNlZjcw"}>
-        <Inbox />
-        <Toast />
-      </CourierProvider> 
+          <Inbox />
+          <Toast />
+        </CourierProvider> 
 
       <div className={styles.description}>
         <p>
