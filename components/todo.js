@@ -1,4 +1,5 @@
 'use client'
+'use server'
 import { useEffect } from 'react'
 import React, { useState } from "react";
 import styles from '../styles/page.module.css'
@@ -28,8 +29,9 @@ export default function Todo() {
     // console.log(todos)
 
     async function handleChange(event, index) {
-        'use server';
+        
         const { name, value, type, checked } = event.target;
+
         setTodos(prevTodos => {
             const updatedTodos = prevTodos.map((todo, i) => {
                 if (i === index) {
@@ -71,3 +73,29 @@ export default function Todo() {
         </div>
     )
 }
+
+// export async function getStaticProps() {
+//     const [todos, setTodos] = React.useState([
+//         {
+//             id: 1,
+//             text: "",
+//             status: false
+//         },
+//         {
+//             id: 2,
+//             text: "",
+//             status: false
+//         },
+//         {
+//             id: 3,
+//             text: "",
+//             status: false
+//         }
+//     ]);
+
+//     return {
+//       props: {
+//         allPostsData
+//       }
+//     }
+//   }

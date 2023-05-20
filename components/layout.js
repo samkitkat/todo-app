@@ -1,21 +1,18 @@
 'use client'
+import Head from 'next/head'
+import Link from 'next/link'
+
 import * as React from 'react';
 import { useEffect } from 'react';
 import Router from 'next/router';
 
-import Head from 'next/head'
-import Script from 'next/script'
-
-// import styles from './layout.module.css'
-// import utilStyles from '../styles/utils.module.css'
-// import Link from 'next/link'
-
+import styles from './layout.module.css'
 import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Layout({ children, home }) {
 
-  const name = '[Your Name]'
+  const name = 'samkitkat'
   const siteTitle = 'Next.js Sample Website'
 
   useEffect(() => {
@@ -37,9 +34,10 @@ export default function Layout({ children, home }) {
   }, []);
 
   return (
-    <>
+
+    <div>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <Link rel="icon" href="/favicon.ico" />
         <meta
           name="todo app"
           content="built with Next.js"
@@ -54,16 +52,10 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <Script
-        src="https://connect.facebook.net/en_US/sdk.js"
-        strategy="lazyOnload"
-        onLoad={() =>
-        console.log(`script loaded correctly, window.FB has been populated`)
-        }
-      />
+      <header className={styles.header}>{home}</header>
 
       <main className={inter.className}>{children}</main>
 
-    </>
+    </div>
   )
 }
