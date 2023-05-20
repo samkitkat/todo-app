@@ -40,6 +40,7 @@ export default function Todo() {
                         [name]: type === "checkbox" ? checked : value
                     };
                 }
+
                 return todo;
             });
 
@@ -73,29 +74,3 @@ export default function Todo() {
         </div>
     )
 }
-
-// export async function getStaticProps() {
-//     const [todos, setTodos] = React.useState([
-//         {
-//             id: 1,
-//             text: "",
-//             status: false
-//         },
-//         {
-//             id: 2,
-//             text: "",
-//             status: false
-//         },
-//         {
-//             id: 3,
-//             text: "",
-//             status: false
-//         }
-//     ]);
-
-//     return {
-//       props: {
-//         allPostsData
-//       }
-//     }
-//   }
