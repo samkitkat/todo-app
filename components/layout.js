@@ -37,7 +37,7 @@ export default function Layout({ children, home }) {
 
     <div>
       <Head>
-        <Link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
         <meta
           name="todo app"
           content="built with Next.js"
