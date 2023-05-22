@@ -14,7 +14,7 @@ export default function Home() {
 
   function renderSnippet() {
     const opts = {
-      apiKey: process.env.NEXT_PUBLIC_ANALYTICS_WRITE_KEY
+      apiKey: '3GbOL32DG1ECHglXWzjoAJz6hI6JEIDy'
     }
     if (process.env.NODE_ENV === 'development') {
       return snippet.max(opts)
