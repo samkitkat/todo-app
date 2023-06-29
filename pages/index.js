@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
 import Script from 'next/script'
 
 import Layout, { siteTitle } from '../components/layout'
@@ -22,6 +23,15 @@ export default function Home() {
     return snippet.min(opts)
   }
 
+  //so date and time change without having to refresh page
+  var [date,setDate] = useState(new Date());
+  useEffect(() => {
+      var timer = setInterval(()=>setDate(new Date()), 1000 )
+      return function cleanup() {
+          clearInterval(timer)
+      }
+  });
+
   return (
     <Layout home>
       <Script
@@ -30,23 +40,23 @@ export default function Home() {
       />
 
       <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            {new Date().toLocaleString("en-US", { month: "long", day: '2-digit' })} Todo's
-          </p>
-        </div>
 
         <CourierProvider userId={"todo-app-test"} clientKey={"ZWQxNWFkYjMtM2M1NC00MGM4LWFkODEtNDczNzUwMWNlZjcw"}>
           <Inbox />
           <Toast />
         </CourierProvider>
 
-        <div className={styles.timer}>
-          <p>
-            {/* {new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })} */}
-            hello
-          </p>
-        </div>
+        <div className={styles.description}>
+        <p>
+          {date.toLocaleString("en-US", { month: "long", day: '2-digit' })} Todo's
+        </p>
+      </div>
+
+      <div className={styles.timer}>
+        <p>
+          {date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+        </p>
+      </div>
 
         <Todo />
       </main>
