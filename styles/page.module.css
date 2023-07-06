@@ -2,46 +2,67 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 6rem 6rem 3rem 6rem;
+    padding-top: 6rem;
     min-height: 100vh;
   }
   
   .timer {
     padding: 0.5rem;
-    max-width: var(--max-width);
     width: 100%;
     display: flex;
     justify-content: center;
-  
-  
     font-size: 3.5rem;
+    font-family: title;
+    color: #A3B18A;
+    -webkit-text-stroke: 2px #588157; 
+    text-shadow: 2px 2px 0 #588157;
   }
   
-  .button {
-    visibility: hidden;
-    display: none;
-  }
-  
-  .description {
-    display: inherit;
-    justify-content: inherit;
-    align-items: inherit;
-    font-size: 0.85rem;
-    max-width: var(--max-width);
+  .button{
     width: 100%;
-    z-index: 2;
-    font-family: var(--font-mono);
-  }
-  
-  .description p {
-    position: relative;
-    margin: 0;
+    display: flex;
+    justify-content: right;
     padding: 1rem;
-    background-color: rgba(var(--callout-rgb), 0.5);
-    border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-    border-radius: var(--border-radius);
+  }
+  /* CSS button by Michael McMillan*/
+  .button54 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #588157;
+    background-color: #DAD7CD;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
   }
   
+  .button54:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+  }
+  
+  @media (min-width: 768px) {
+    .button54 {
+      padding: 0.25em 0.75em;
+    }
+  }
+  .description {
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+    font-family: var(--font-mono);
+    color: #588157;
+  }
+
   .grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(25%, auto));
@@ -51,6 +72,7 @@
   
   .card {
     padding: 1rem 2rem;
+    margin-left: 1rem;
     border-radius: var(--border-radius);
     background: rgba(var(--card-rgb), 0);
     border: 1px solid rgba(var(--card-border-rgb), 0.2);
@@ -76,16 +98,13 @@
   }
   
   .todos {
-    padding-top: 3rem;
+    padding-top: 1rem;
   }
   
   .form {
+    display: flex;
     margin-bottom: 0.5rem;
-  }
-  
-  .checkbox {
-    display: inline;
-    margin-right: 1rem;
+    align-items: center;
   }
   
   .center {
@@ -174,47 +193,8 @@
     .description {
       font-size: 0.8rem;
     }
-  
-    .description a {
-      padding: 1rem;
-    }
-  
-    .description p,
-    .description div {
-      display: flex;
-      justify-content: center;
-      position: fixed;
-      width: 100%;
-    }
-  
-    .description p {
-      align-items: center;
-      inset: 0 0 auto;
-      padding: 2rem 1rem 1.4rem;
-      border-radius: 0;
-      border: none;
-      border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
-      background: linear-gradient(
-        to bottom,
-        rgba(var(--background-start-rgb), 1),
-        rgba(var(--callout-rgb), 0.5)
-      );
-      background-clip: padding-box;
-      backdrop-filter: blur(24px);
-    }
-  
-    .description div {
-      align-items: flex-end;
-      pointer-events: none;
-      inset: auto 0 0;
-      padding: 2rem;
-      height: 200px;
-      background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgb(var(--background-end-rgb)) 40%
-      );
-      z-index: 1;
+    .timer {
+      font-size: 3rem;
     }
   }
   

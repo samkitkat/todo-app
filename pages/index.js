@@ -24,12 +24,12 @@ export default function Home() {
   }
 
   //so date and time change without having to refresh page
-  var [date,setDate] = useState(new Date());
+  var [date, setDate] = useState(new Date());
   useEffect(() => {
-      var timer = setInterval(()=>setDate(new Date()), 1000 )
-      return function cleanup() {
-          clearInterval(timer)
-      }
+    var timer = setInterval(() => setDate(new Date()), 1000)
+    return function cleanup() {
+      clearInterval(timer)
+    }
   });
 
   return (
@@ -46,20 +46,17 @@ export default function Home() {
           <Toast />
         </CourierProvider>
 
-        <div className={styles.description}>
-        <p>
-          {date.toLocaleString("en-US", { month: "long", day: '2-digit' })} Todo's
-        </p>
-      </div>
 
-      <div className={styles.timer}>
-        <p>
-          {date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
-        </p>
-      </div>
+            <div className={styles.timer}>
+              <p>{date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</p>
+            </div>
 
-        <Todo />
-      </main>
-    </Layout>
-  )
+            <div className={styles.description}>
+            <p>{date.toLocaleString("en-US", { month: "long", day: '2-digit' })} Todo's</p>
+          </div>
+
+            <Todo />
+          </main>
+        </Layout>
+        )
 }

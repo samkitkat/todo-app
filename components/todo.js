@@ -31,7 +31,7 @@ export default function Todo() {
         key: nanoid(),
         text: "",
         type: "text",
-        placeholder: "todo text"
+        placeholder: "task todo"
       }
       setTodos(prevTodos => [newTodo, ...prevTodos])
       setCurrentTodoId(newTodo.id)
@@ -51,6 +51,7 @@ export default function Todo() {
           }
           return todo;
         });
+        // console.log(checked ? "checked" : "unchecked");
         return updatedTodos;
       });
     }
@@ -65,9 +66,10 @@ export default function Todo() {
     return (
       <div className={styles.todos}>
   
-      <div className={styles.timer}>
-        <button className="new-todo" onClick={createNewTodo}>add task</button>
-      </div>
+        <div className={styles.button}>
+          <button className={styles.button54} onClick={createNewTodo}>add task</button>
+        </div>
+      
         
         {
           todos.length > 0
