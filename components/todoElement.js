@@ -19,6 +19,7 @@ export default function TodoElement(props) {
                 placeholder="todo text"
                 className={styles.card}
                 name="text"
+                autoComplete="off"
                 value={props.value}
                 id={props.id}
                 onChange={props.onChange}
