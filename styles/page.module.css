@@ -73,6 +73,7 @@
   .card {
     padding: 1rem 2rem;
     margin-left: 1rem;
+    width: 300px;
     border-radius: var(--border-radius);
     background: rgba(var(--card-rgb), 0);
     border: 1px solid rgba(var(--card-border-rgb), 0.2);
