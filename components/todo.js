@@ -6,20 +6,21 @@ import { nanoid } from "nanoid"
 // import TodoElement from './todoElement'
 
 export default function Todo() {
+
   let value = [];
+  if (typeof window !== "undefined") {
+    value = JSON.parse(localStorage.getItem("todos")) || [];
+  }
+
   const [todos, setTodos] = useState(value);
   const [currentTodoId, setCurrentTodoId] = useState((todos[0] && todos[0].id) || "")
   const isActive = currentTodoId;
   const inputRefs = useRef([]);
 
-  /* ------------------------------------------------------------------------------------------ */
-  if (typeof window !== "undefined") {
-    value = JSON.parse(localStorage.getItem("todos")) || [];
-  }
-
   React.useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos))
   }, [todos])
+  
   /* ------------------------------------------------------------------------------------------ */
   function createNewTodo() {
     const newTodo = {
