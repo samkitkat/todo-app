@@ -19,7 +19,6 @@ const TodoElement = (props) => {
                 autoFocus
                 ref={props.ref}
                 type={props.type}
-                placeholder={props.placeholder}
                 className={styles.card}
                 name="text"
                 autoComplete="off"

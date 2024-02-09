@@ -14,8 +14,8 @@
     font-size: 3.5rem;
     font-family: title;
     color: #A3B18A;
-    -webkit-text-stroke: 2px #588157; 
-    text-shadow: 2px 2px 0 #588157;
+    -webkit-text-stroke: 2px #04471C; 
+    text-shadow: 2px 2px 0 #04471C;
   }
 
   .button {
@@ -41,7 +41,7 @@
     font-size: 1rem;
     letter-spacing: 0.2rem;
     font-family: var(--font-mono);
-    color: #588157;
+    color: #04471C;
   }
 
   .grid {
@@ -52,12 +52,15 @@
   }
   
   .card {
-    padding: 1rem 1.5rem;
+    padding: 0.9rem 1.2rem;
+    font-size: 14px;
+    color: #04471C;
+    font-weight: bold;
     margin-left: 1rem;
     margin-right: 1rem;
     width: 250px;
     border-radius: var(--border-radius);
-    background: #CAD8C1;
+    background: #DAD7CD;
     border: 3px solid rgba(88, 129, 87);
     transition: background 200ms, border 200ms;
   }
@@ -159,14 +162,6 @@
       text-align: center;
     }
   
-    .card {
-      padding: 1rem 2.5rem;
-    }
-  
-    .card h2 {
-      margin-bottom: 0.5rem;
-    }
-  
     .center {
       padding: 8rem 0 6rem;
     }
@@ -176,10 +171,4 @@
       height: 300px;
     }
   
-    .description {
-      font-size: 0.8rem;
-    }
-    .timer {
-      font-size: 3rem;
-    }
   }

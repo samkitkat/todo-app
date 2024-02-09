@@ -38,7 +38,6 @@
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
-  --hover: 	169, 211, 255;
 }
 
 @font-face {
@@ -73,14 +72,14 @@ a {
   text-decoration: none;
 }
 
+li {
+  list-style-type: none;
+}
+
 /* Checkboxes */
 
 input[type="checkbox"]:hover {
   border: 0.20em solid #04471C;
-}
-
-::placeholder {
-  color: #588157;
 }
 
 input, select, textarea {
@@ -117,6 +116,14 @@ input[type="checkbox"]::before {
 
 input[type="checkbox"]:checked::before {
   transform: scale(1);
+}
+
+input[type="checkbox"]:checked::before {
+  background-color: #04471C;
+}
+
+input[type="checkbox"]:checked {
+  border: 0.20em solid #04471C;
 }
 /*  Checkboxes */
 
