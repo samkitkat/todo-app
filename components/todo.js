@@ -15,13 +15,15 @@ export default function Todo() {
 
   const [todos, setTodos] = useState(value);
   const [currentTodoId, setCurrentTodoId] = useState((todos[0] && todos[0].id) || "")
+  const [dragItemIndex, setDragItemIndex] = useState();
+  const [dragOverItemIndex, setDragOverItemIndex] = useState();
   const isActive = currentTodoId;
   const inputRefs = useRef([]);
 
   React.useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos))
   }, [todos])
-  
+
   /* ------------------------------------------------------------------------------------------ */
   function createNewTodo() {
     const newTodo = {
@@ -41,7 +43,7 @@ export default function Todo() {
   }
 
   const deleteTodo = (id) => setTodos(todos.filter((todo) => todo.id !== id));
-  
+
 
   /* ------------------------------------------------------------------------------------------ */
   //for when user checks or unchecks todo
@@ -86,6 +88,39 @@ export default function Todo() {
     });
   };
   /* ------------------------------------------------------------------------------------------ */
+  const handleDragStart = index => {
+    setDragItemIndex(index)
+  };
+
+  const handleDragOver = event => {
+    event.preventDefault();
+  };
+
+  const handleDrop = (index) => {
+    // const _todos = [...todos];
+    // const dragItem = _todos.splice(dragItemIndex, 1);
+    // _todos.splice(dragOverItemIndex, 0, dragItem);
+    // setTodos(_todos)
+    const temp = todos[dragItemIndex].text;
+    const temp2 = todos[index].text;
+    todos[dragItemIndex].text = temp2;
+    todos[index].text = temp;
+  };
+
+  const handleDragEnter = index => {
+    setDragOverItemIndex(index)
+  };
+
+  const handleDragLeave = (event) => {
+    setDragOverItemIndex(undefined)
+  };
+
+  const handleDragEnd = (event) => {
+    setDragItemIndex(undefined)
+    setDragOverItemIndex(undefined)
+  };
+  /* ------------------------------------------------------------------------------------------ */
+
   return (
     <div className={styles.todos}>
       <div className={styles.button}>
@@ -96,22 +131,18 @@ export default function Todo() {
         todos && todos.length > 0 &&
         todos.map((todo, index) => (
 
-            // <TodoElement
-            //   key={todo.id}
-            //   id={`checkbox-${index}`}
-            //   todo={todo}
-            //   onChange={event => handleChange(event, index)}
-            //   className={styles.card}
-            //   value={todo.text}
-            //   checked={todo.status}
-            //   newTodo={createNewTodo}
-            //   onKeyDown={event => handleKeyDown(event, index)}
-            //   setCurrentTodoId={setCurrentTodoId}
-            //   currentIndex={index}
-            //   onClick={handleClick}
-            // />
+          <div
+            className={styles.form}
+            key={todo.id}
+            draggable
+            onDragStart={() => handleDragStart(index)}
+            onDragOver={handleDragOver}
+            onDrop={() => handleDrop(index)}
+            onDragEnter={() => handleDragEnter(index)}
+            onDragLeave={handleDragLeave}
+            onDragEnd={handleDragEnd}
+          >
 
-          <div className={styles.form} key={todo.id}>
             <div className={styles.checkbox}>
               <input
                 type="checkbox"
@@ -131,7 +162,6 @@ export default function Todo() {
               name="text"
               autoComplete="off"
               className={styles.card}
-              placeholder={todo.placeholder}
               value={todo.text}
               onChange={event => handleChange(event, index)}
               index={index}
@@ -139,10 +169,9 @@ export default function Todo() {
               deleteTodo={deleteTodo}
             />
             <div className={styles.deleteButton}>
-            <button className={styles.deleteB} onClick={() => deleteTodo(todo.id)}><FaTrash /></button>
+              <button className={styles.deleteB} onClick={() => deleteTodo(todo.id)}><FaTrash /></button>
             </div>
           </div>
-
         ))
       }
 
