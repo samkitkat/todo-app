@@ -7,7 +7,7 @@
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 	218, 215, 205;
-  --background-end-rgb: 	218, 215, 205;
+  --background-end-rgb: 		167, 215, 167;
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
@@ -38,45 +38,13 @@
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
+  --hover: 	169, 211, 255;
 }
 
 @font-face {
   font-family: title;
   src: url('./fonts/Arbotek-Ultra.otf');
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
-} */
 
 * {
   box-sizing: border-box;
@@ -105,71 +73,32 @@ a {
   text-decoration: none;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-} */
-/* 
-input[type="checkbox"] {
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: var(--form-background);
-  margin: 0;
-
-  font: inherit;
-  color: currentColor;
-  width: 1.15em;
-  height: 1.15em;
-  border: 0.15em solid currentColor;
-  border-radius: 0.15em;
-  transform: translateY(-0.075em);
-
-  place-content: center;
-  cursor: pointer;
-}
-
-input[type="checkbox"]:checked::before {
-  content: "";
-  width: 0.65em;
-  height: 0.65em;
-  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-  transform: scale(0);
-  transform-origin: bottom left;
-  transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em var(--form-control-color);
-}
-
-input[type="checkbox"]:checked::before {
-  transform: scale(1);
-} */
-
 /* Checkboxes */
 
-input[type="checkbox"]:focus {
-  outline: max(2px, 0.15em) solid #588157;
-  outline-offset: max(2px, 0.15em);
+input[type="checkbox"]:hover {
+  border: 0.20em solid #04471C;
 }
 
+::placeholder {
+  color: #588157;
+}
+
+input, select, textarea {
+  color: #588157;
+}
 
 input[type="checkbox"] {
-  /* Add if not using autoprefixer */
   -webkit-appearance: none;
-  /* Remove most all native input styles */
   appearance: none;
-  /* For iOS < 15 */
-  background-color: var(--form-background);
-  /* Not removed via appearance */
+  background-color: #DAD7CD;
   margin: 0;
-
   font: inherit;
   color: #588157;
-  width: 1.15em;
-  height: 1.15em;
-  border: 0.15em solid #588157;
+  width: 1.45em;
+  height: 1.45em;
+  border: 0.20em solid #588157;
   border-radius: 0.15em;
   transform: translateY(-0.075em);
-
   display: grid;
   place-content: center;
 }
@@ -183,11 +112,40 @@ input[type="checkbox"]::before {
   transform-origin: bottom left;
   transition: 120ms transform ease-in-out;
   box-shadow: inset 1em 1em var(--form-control-color);
-  /* Windows High Contrast Mode */
   background-color: #588157;
 }
 
 input[type="checkbox"]:checked::before {
   transform: scale(1);
 }
-/* / Checkboxes */
+/*  Checkboxes */
+
+/* CSS button by Michael McMillan*/
+button {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #588157;
+  background-color: #DAD7CD;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+button:hover {
+  color: #04471C;
+}
+/* CSS button by Michael McMillan*/

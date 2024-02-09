@@ -31,7 +31,7 @@ export default function Todo() {
       status: false,
       text: "",
       type: "text",
-      placeholder: "todo",
+      placeholder: "task",
       handleKeyDown: "",
       current: isActive,
       index: "",

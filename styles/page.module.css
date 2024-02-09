@@ -17,43 +17,24 @@
     -webkit-text-stroke: 2px #588157; 
     text-shadow: 2px 2px 0 #588157;
   }
-  
-  .button{
+
+  .button {
     width: 100%;
     display: flex;
     justify-content: right;
     padding: 1rem;
   }
-  /* CSS button by Michael McMillan*/
-  .button54 {
-    font-family: "Open Sans", sans-serif;
-    font-size: 14px;
-    letter-spacing: 2px;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #588157;
-    background-color: #DAD7CD;
-    cursor: pointer;
-    border: 3px solid;
-    padding: 0.25em 0.5em;
-    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
-    position: relative;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
+
+  .deleteButton{
+    display: flex;
   }
-  
-  .button54:active {
-    box-shadow: 0px 0px 0px 0px;
-    top: 5px;
-    left: 5px;
-  }
-  
+    
   @media (min-width: 768px) {
     .button54 {
       padding: 0.25em 0.75em;
     }
   }
+
   .description {
     display: flex;
     justify-content: center;
@@ -71,12 +52,12 @@
   }
   
   .card {
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     margin-left: 1rem;
-    width: 300px;
+    margin-right: 1rem;
+    width: 250px;
     border-radius: var(--border-radius);
-    background: rgba(var(--card-rgb), 0);
-    /* border: 1px solid rgba(var(--card-border-rgb), 0.2); */
+    background: #CAD8C1;
     border: 3px solid rgba(88, 129, 87);
     transition: background 200ms, border 200ms;
   }
@@ -97,6 +78,11 @@
     font-size: 1rem;
     line-height: 1.5;
     max-width: 30ch;
+  }
+
+  .card:focus {
+    outline: none;
+    border-color: #04471C;
   }
   
   .todos {
@@ -144,17 +130,15 @@
   .logo {
     position: relative;
   }
-  /* Enable hover only on non-touch devices */
-  @media (hover: hover) and (pointer: fine) {
-    .card:hover {
-      background: rgba(var(--card-rgb), 0.1);
-      border: 1px solid rgba(var(--card-border-rgb), 0.15);
-    }
-  
-    .card:hover span {
-      transform: translateX(4px);
-    }
-  }
+
+
+
+
+
+
+
+
+
   
   @media (prefers-reduced-motion) {
     .card:hover span {
@@ -198,53 +182,4 @@
     .timer {
       font-size: 3rem;
     }
-  }
-  
-  /* Tablet and Smaller Desktop */
-  @media (min-width: 701px) and (max-width: 1120px) {
-    .grid {
-      grid-template-columns: repeat(2, 50%);
-    }
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    .vercelLogo {
-      filter: invert(1);
-    }
-  
-    .logo {
-      filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
-    }
-  }
-  
-  @keyframes rotate {
-    from {
-      transform: rotate(360deg);
-    }
-    to {
-      transform: rotate(0deg);
-    }
-  }
-
-  .deleteButton{
-    display: flex;
-    padding: 1rem;
-  }
-
-
-  .deleteB {
-    font-family: "Open Sans", sans-serif;
-    font-size: 18px;
-    letter-spacing: 2px;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #588157;
-    background-color: #DAD7CD;
-    cursor: pointer;
-    border: none;
-    padding: 0.25em 0.5em;
-    position: relative;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
   }
