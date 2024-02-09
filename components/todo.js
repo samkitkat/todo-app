@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styles from '../styles/page.module.css'
 import { nanoid } from "nanoid"
+import { FaTrash } from "react-icons/fa6";
 // import TodoElement from './todoElement'
 
 export default function Todo() {
@@ -38,6 +39,10 @@ export default function Todo() {
     setTodos(prevTodos => [newTodo, ...prevTodos])
     setCurrentTodoId(newTodo.id)
   }
+
+  const deleteTodo = (id) => setTodos(todos.filter((todo) => todo.id !== id));
+  
+
   /* ------------------------------------------------------------------------------------------ */
   //for when user checks or unchecks todo
   function handleChange(event, index) {
@@ -131,7 +136,11 @@ export default function Todo() {
               onChange={event => handleChange(event, index)}
               index={index}
               onClick={event => handleClick(event, index)}
+              deleteTodo={deleteTodo}
             />
+            <div className={styles.deleteButton}>
+            <button className={styles.deleteB} onClick={() => deleteTodo(todo.id)}><FaTrash /></button>
+            </div>
           </div>
 
         ))

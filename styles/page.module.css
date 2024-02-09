@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 6rem;
+    padding-top: 4rem;
     min-height: 100vh;
   }
   
@@ -76,7 +76,8 @@
     width: 300px;
     border-radius: var(--border-radius);
     background: rgba(var(--card-rgb), 0);
-    border: 1px solid rgba(var(--card-border-rgb), 0.2);
+    /* border: 1px solid rgba(var(--card-border-rgb), 0.2); */
+    border: 3px solid rgba(88, 129, 87);
     transition: background 200ms, border 200ms;
   }
   
@@ -99,7 +100,7 @@
   }
   
   .todos {
-    padding-top: 1rem;
+    padding-top: 3rem;
   }
   
   .form {
@@ -223,4 +224,27 @@
     to {
       transform: rotate(0deg);
     }
+  }
+
+  .deleteButton{
+    display: flex;
+    padding: 1rem;
+  }
+
+
+  .deleteB {
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #588157;
+    background-color: #DAD7CD;
+    cursor: pointer;
+    border: none;
+    padding: 0.25em 0.5em;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
   }
