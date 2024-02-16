@@ -6,7 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@segment/snippet": "^4.16.0",
+    "@segment/analytics-next": "^1.64.0",
     "@trycourier/react-inbox": "^3.6.3",
     "@trycourier/react-provider": "^3.6.3",
     "@trycourier/react-toast": "^3.6.3",

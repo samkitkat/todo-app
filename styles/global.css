@@ -1,6 +1,6 @@
 :root {
   --max-width: 75%;
-  --border-radius: 12px;
+  --border-radius: 8px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
@@ -59,12 +59,7 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #2e645a;
 }
 
 a {
@@ -92,10 +87,10 @@ input[type="checkbox"] {
   background-color: #DAD7CD;
   margin: 0;
   font: inherit;
-  color: #588157;
+  color: #8fa18f;
   width: 1.45em;
   height: 1.45em;
-  border: 0.20em solid #588157;
+  border: 0.20em solid #8fa18f;
   border-radius: 0.15em;
   transform: translateY(-0.075em);
   display: grid;
@@ -119,11 +114,11 @@ input[type="checkbox"]:checked::before {
 }
 
 input[type="checkbox"]:checked::before {
-  background-color: #04471C;
+  background-color: #8fa18f;
 }
 
 input[type="checkbox"]:checked {
-  border: 0.20em solid #04471C;
+  border: 0.20em solid #8fa18f;
 }
 /*  Checkboxes */
 
@@ -134,8 +129,8 @@ button {
   letter-spacing: 2px;
   text-decoration: none;
   text-transform: uppercase;
-  color: #588157;
-  background-color: #DAD7CD;
+  color: #8fa18f;
+  background-color: #2e645a;
   cursor: pointer;
   border: 3px solid;
   padding: 0.25em 0.5em;

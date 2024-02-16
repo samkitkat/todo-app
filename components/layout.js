@@ -1,22 +1,22 @@
-'use client'
-import Head from 'next/head'
+"use client";
+import Head from "next/head";
 
-import * as React from 'react';
-import { useEffect } from 'react';
-import Router from 'next/router';
+import * as React from "react";
+import { useEffect } from "react";
+import Router from "next/router";
 
-import styles from './layout.module.css'
-import { Inter } from 'next/font/google'
-const inter = Inter({ subsets: ['latin'] })
+import styles from "./layout.module.css";
+import { Inter } from "next/font/google";
+import { analytics } from "../pages";
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Layout({ children, home }) {
-
-  const name = 'samkitkat'
-  const siteTitle = "sam's todo app"
+  const name = "samkitkat";
+  const siteTitle = "sam's todo app";
 
   useEffect(() => {
     // courier doesnt get page events only track events it seems
-    global.analytics.track("loaded")
+    analytics.track("loaded");
     const handleRouteChange = (url) => {
       if (url) {
         global.analytics.page("page loaded", {
@@ -25,22 +25,18 @@ export default function Layout({ children, home }) {
       }
     };
 
-    Router.events.on('routeChangeComplete', handleRouteChange);
+    Router.events.on("routeChangeComplete", handleRouteChange);
 
     return () => {
-      Router.events.off('routeChangeComplete', handleRouteChange);
+      Router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, []);
 
   return (
-
     <div>
       <Head>
         <link rel="icon" href="/favicon.png" />
-        <meta
-          name="sam's todo app"
-          content="built with love"
-        />
+        <meta name="sam's todo app" content="built with love" />
         {/* <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
@@ -54,7 +50,6 @@ export default function Layout({ children, home }) {
       <header className={styles.header}>{home}</header>
 
       <main className={inter.className}>{children}</main>
-
     </div>
-  )
+  );
 }
