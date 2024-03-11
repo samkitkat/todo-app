@@ -79,7 +79,6 @@ input[type="checkbox"]:hover {
 
 input, select, textarea {
   color: #588157;
-  overflow: scroll;
 }
 
 input[type="checkbox"] {
