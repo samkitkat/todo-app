@@ -79,6 +79,7 @@ input[type="checkbox"]:hover {
 
 input, select, textarea {
   color: #588157;
+  overflow: scroll;
 }
 
 input[type="checkbox"] {
@@ -114,11 +115,11 @@ input[type="checkbox"]:checked::before {
 }
 
 input[type="checkbox"]:checked::before {
-  background-color: #8fa18f;
+  background-color: #04471C;
 }
 
 input[type="checkbox"]:checked {
-  border: 0.20em solid #8fa18f;
+  border: 0.20em solid #04471C;
 }
 /*  Checkboxes */
 
